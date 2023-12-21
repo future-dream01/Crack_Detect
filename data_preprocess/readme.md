@@ -1,0 +1,6 @@
+# 数据预处理的步骤分别如下：
+1. 首先要确定.jpg文件和.xml文件保持一一对应。check_file_same.py负责实现，代码中path1 = './images'和path2 = './xml'分别为标注的图片文件夹和标注好的xml文件夹，out = './error_data'自己会创建error_data文件夹，会将有问题的图片或者xml文件存至该文件夹中；
+2. 如果有必要则可以选择命名进行规范化管理。rename.py负责实现，代码中imgs_path = './images'表示要命名的图片的文件夹（同时对应的xml文件夹应与images在同一级目录下）；
+3. 将标注的xml格式转换成txt格式。xml2txt.py负责实现。代码中xml_path = './xml/'和base_path = './images/'分别表示文件重命名之后的对应的文件夹（当然，这里文件夹的名字到目前位置一直都没有变过），save_img = "./save-imgs/"表示可视化标注结构存放的文件夹（会自动创建），error_data = './error_data/'表示存放有问题的数据的文件夹（会自动创建），save_txt = "./txts/"表示转化txt存放的文件夹（会自动创建）。特别注意的是，在代码中的第59行txt_file.write('%s '%(str(1)))，str(*)其中*表示从0开始，如果是一个类，那*就是0，如果还有一个新类，则在转换的时候记得这里改成1，如果再还有新类那么在转换的时候就改成2，依次类推；
+4. 随机的划分训练集和验证集，split_train_val.py负责实现。代码中jpg_path = './images'和xml_path = './txts/'分标表示图片存放文件夹和转化后的txt存放文件夹，train_xml = './train/Annotations'，val_xml = './val/Annotations'，train_jpg = './train/JPEGImages'，val_jpg = './val/JPEGImages'，这些文件夹都会自动创建（注：这里的Annotations文件夹下面都是存的转换后的txt文件）。
+5. 生成json格式（包括训练集和验证集），txt_newpath = './%s/Annotations'%name和jpg_newpath = './%s/JPEGImages'%name分别表示验证集或者训练集对应的文件路径，代码中第8行categories = [{"id": 1, "name": "crack", "supercategory": "crack"}， {}， {}]，如果有多类就往后面继续加{}，同时id跟着加1（注意，这里的id是从1开始的，与步骤3中稍微有点区别）。

@@ -1,0 +1,9 @@
+# 环境配置：
+1. Python版本3.7及以上，pytorch版本为1.2.0及以上；
+2. GPU显卡为1080Ti或其他，显卡驱动为440，cuda版本为10.2，cudnn版本为cuda10.2对应的8.0.2.39；
+# 训练配置更改说明：
+1. 主要更改cfg文件夹中的cls.name和model.cfg
+    1. 根据自己的需求添加类别名，以逗号隔开；
+    2. 根据自己的类别数，更改model.cfg中对应的“classes=1”，以及[yolo]上面紧跟着的[convolutional]中的“filters=15”中的15替换(3*(4+类别数))，注：总共需要修改三处对应的classes和filters；
+# 训练前先要对数据进行预处理：
+ 1. 详情请见data_preprocess文件夹中的代码。

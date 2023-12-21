@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>170219819581.png</filename>
+	<path>/home/jetson/Crack_Detect-main/images/170219819581.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1152</width>
+		<height>648</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>1</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>454</xmin>
+			<ymin>226</ymin>
+			<xmax>691</xmax>
+			<ymax>450</ymax>
+		</bndbox>
+	</object>
+</annotation>

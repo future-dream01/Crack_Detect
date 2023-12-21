@@ -1,0 +1,5 @@
+classes= 1
+train = /home/cidi-gpu/disk/data/headData/960_yolo/train_shuffle.txt
+valid_img = /media/jie/Work/Public_Datasets/pano/912_1/1/val/JPEGImages11
+val_json = /media/jie/Work/Public_Datasets/pano/912_1/1/val/pano_val2020.json
+names=/media/jie/Work/Object_Detection/panodetect/YoloV3_prune/config/oxfordhead.names
