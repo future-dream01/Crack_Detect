@@ -56,11 +56,11 @@ if __name__ == '__main__':
     # dataset setting
     print('INFO: Initialing train and test dataset...')
 
-    train_img_dir = ['/home/jetson/Crack_Detect-main/train/JPEGImages']
-    train_json = ['/home/jetson/Crack_Detect-main/shale_train_2021.json']
+    train_img_dir = ['/home/jetson/github/Crack_Detect/train/JPEGImages']
+    train_json = ['/home/jetson/github/Crack_Detect/shale_train_2021.json']
 
-    val_img_dir = ['/home/jetson/Crack_Detect-main/train/JPEGImages']
-    val_json = ['/home/jetson/Crack_Detect-main/shale_train_2021.json']
+    val_img_dir = ['/home/jetson/github/Crack_Detect/train/JPEGImages']
+    val_json = ['/home/jetson/github/Crack_Detect/shale_train_2021.json']
     # read the class name
     class_names = parse_data_config(args.data_config)['names'].split(',')
 
